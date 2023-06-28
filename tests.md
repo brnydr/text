@@ -48,5 +48,51 @@ wordCounter(text);
 numberOfOccurencesInText(word, text)
 
 # Test:
+It should return 1 if the text and word are the same.
+# Code:
+let text = "boom"
+numberOfOccurencesInText("boom", text);
+# Expected Output:
+`1`;
 
+# Test:
+It should return 0 if teh text and word are different.
+# Code:
+let text = "boom";
+numberOfOccurencesInText("bam", text);
+# Expected Output:
+`0`;
 
+# Test:
+It should return the number of multiple occurences of a word.
+# Code:
+let text = "boom bam boom bim boom"
+numberOfOccurencesInText("boom", text);
+# Expected Output:
+`3`;
+
+# Test:
+It should return the amount of occurences regardless of case. 
+# Code:
+let text = "Boom bam BOOM bim boom";
+numberOfOccurencesInText("boom", text);
+# Expected Output:
+`3`;
+
+# Test: 
+It should return a word match regardless of punctuation.
+# Code:
+const text = "Red! Red. I like red, green, and yellow.";
+const word = "Red";
+numberOfOccurrencesInText(word, text);
+# Expected Output: 
+`3`
+
+# Test: 
+It should return a word match only if the same word.
+# Code:
+const text = "Red! Red. I like red, green, and yellow.";
+const word = "Red";
+numberOfOccurrencesInText(word, text);
+# Expected Output: 
+`3`
