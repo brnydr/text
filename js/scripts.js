@@ -90,8 +90,26 @@ function boldPassage(word, text) {
   }
 
   function uniqueWords(text) {
-
-  }
+    if (isEmpty(text)) {
+        return null;
+    }
+    let ul = document.createElement("ul");
+    let p = document.createElement("p");
+    let frequencyArray = [];
+    let words = wordFrequency(text);
+    for (let key in words) {
+        frequencyArray.push(key + ': ' + words[key]);
+    }
+    
+    frequencyArray.forEach((word) => {
+        let li = document.createElement("li");
+        li.innerText = word;
+        ul.append(li);
+     });
+     p.append(ul);
+     return p;
+ }
+    
 
 function handleFormSubmission(e) {
     e.preventDefault();
@@ -107,7 +125,14 @@ function handleFormSubmission(e) {
     } else {
         document.querySelector("div#bolded-passage").innerText = null;
     }
+    let frequency = uniqueWords(passage);
+    if (frequency) {
+        document.querySelector("div#unique-words").append(frequency);
+    } else {
+        document.querySelector("div#unique-words").innerText = null;
+    }
 }
+
 
 window.addEventListener("load", function() {
   document.querySelector("form#word-counter").addEventListener("submit", handleFormSubmission);
