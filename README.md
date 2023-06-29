@@ -134,3 +134,18 @@ It should store the user's inputted text as an array.
 `wordFrequency(text);`
 ## Expected Output:
 `["Hello", "there", "my", "name", "is", "Brian,", "Brian", "is", "my", "name"]`  
+
+## Test:
+It should sort the array by frequency.
+## Code:
+`const text = "Hello there my name is Brian, Brian is my name.";`
+`wordFrequency(text);`
+## Expected Output:
+`['brian', 'brian', 'hello', 'is', 'is', 'my', 'my', 'name', 'name.']`
+
+## Test:
+It should provide how many times a word occurs in the text.
+## Code:
+`const text = "Hello there my name is Brian, Brian is my name.";`
+`wordFrequency(text);`
+## Expected Output:
