@@ -50,7 +50,21 @@ function omitOffensiveWords(text) {
     return modifiedText.join(" ");
 }
 
-
+function wordFrequency(text) {
+    let textArray = text.split(" ");
+    textArray.sort();
+    let wordCount = {};
+    textArray.forEach((word) => {
+        if (wordCount[word]) {
+            wordCount[word]++;
+        } else {
+            wordCount[word] = 1;
+        }
+    }
+    
+    );
+    return wordCount;
+}
 
 // UI Logic
 
@@ -73,6 +87,10 @@ function boldPassage(word, text) {
       }
     });
     return p;
+  }
+
+  function uniqueWords(text) {
+
   }
 
 function handleFormSubmission(e) {
